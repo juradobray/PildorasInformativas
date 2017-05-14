@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_crear_publicacion"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Crear publicaciones" />
+        <item
+            android:id="@+id/nav_consulta_publicaciones"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Consulta de publicaciones" />
+
+
+    </group>
+
+    <item
+        android:id="@+id/nav_cerrar_Sesion"
+        android:icon="@mipmap/ic_launcher"
+        android:title="Cerrar sesión" />
+
+
+
+</menu>
