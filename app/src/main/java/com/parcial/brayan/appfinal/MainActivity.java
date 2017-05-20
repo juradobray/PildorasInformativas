@@ -1,5 +1,6 @@
 package com.parcial.brayan.appfinal;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -130,7 +131,10 @@ public class MainActivity extends AppCompatActivity
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.content_main, fragment).commit();
         } else if (id == R.id.nav_cerrar_Sesion) {
-Toast.makeText(this,"Cerrar sesión",Toast.LENGTH_LONG).show();
+            Intent inte= new Intent(this,Login.class);
+            inte.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(inte);
+            Toast.makeText(this,"Cerrar sesión",Toast.LENGTH_LONG).show();
          //   EnviarMails em = new EnviarMails(this,"kattrendon17@gmail.com","prueba desde android","hola mi amor!! te amo !!");
            // em.execute();
 

@@ -8,25 +8,27 @@ import java.util.Date;
 
 public class Publicacion {
 
-  private  int id_publicacion;
+    private int id_publicacion;
     private String titulo_publicacion;
     private String contenido_publicacion;
     private Date fecha_inicio;
     private Date fecha_fin;
-    private int id_usuario ;
-    private int id_facultad;
+    private int id_usuario;
+    private String imagen;
+    private int id_tipo_publicacion;
 
     public Publicacion() {
     }
 
-    public Publicacion(int id_facultad, int id_publicacion, String titulo_publicacion, String contenido_publicacion, Date fecha_inicio, Date fecha_fin, int id_usuario) {
-        this.id_facultad = id_facultad;
+    public Publicacion(int id_publicacion, String titulo_publicacion, String contenido_publicacion, Date fecha_inicio, Date fecha_fin, int id_usuario, String imagen, int id_tipo_publicacion) {
         this.id_publicacion = id_publicacion;
         this.titulo_publicacion = titulo_publicacion;
         this.contenido_publicacion = contenido_publicacion;
         this.fecha_inicio = fecha_inicio;
         this.fecha_fin = fecha_fin;
         this.id_usuario = id_usuario;
+        this.imagen = imagen;
+        this.id_tipo_publicacion = id_tipo_publicacion;
     }
 
     public int getId_publicacion() {
@@ -77,11 +79,19 @@ public class Publicacion {
         this.id_usuario = id_usuario;
     }
 
-    public int getId_facultad() {
-        return id_facultad;
+    public String getImagen() {
+        return imagen;
     }
 
-    public void setId_facultad(int id_facultad) {
-        this.id_facultad = id_facultad;
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+    public int getId_tipo_publicacion() {
+        return id_tipo_publicacion;
+    }
+
+    public void setId_tipo_publicacion(int id_tipo_publicacion) {
+        this.id_tipo_publicacion = id_tipo_publicacion;
     }
 }

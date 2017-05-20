@@ -52,7 +52,7 @@ public class EnviarMails extends AsyncTask<Void,Void,Void> {
     protected void onPreExecute() {
         super.onPreExecute();
         //Showing progress dialog while sending email
-        progressDialog = ProgressDialog.show(context,"Sending message","Please wait...",false,false);
+        progressDialog = ProgressDialog.show(context,"Enviando notificaciones","Por favor espere...",false,false);
     }
 
     @Override
