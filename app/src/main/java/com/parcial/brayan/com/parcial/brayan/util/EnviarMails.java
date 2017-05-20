@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import java.util.Properties;
 
+import javax.mail.Address;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
@@ -23,7 +24,7 @@ public class EnviarMails extends AsyncTask<Void,Void,Void> {
     private Session session;
 
     //Information to send email
-    private String email;
+    private Address[] email;
     private String subject;
     private String message;
 
@@ -39,7 +40,7 @@ public class EnviarMails extends AsyncTask<Void,Void,Void> {
      * @param subject asunto
      * @param message mensaje a enviar
      */
-    public EnviarMails(Context context, String email, String subject, String message){
+    public EnviarMails(Context context, Address[] email, String subject, String message){
         //Initializing variables
         this.context = context;
         this.email = email;
@@ -92,7 +93,7 @@ public class EnviarMails extends AsyncTask<Void,Void,Void> {
             //Setting sender address
             mm.setFrom(new InternetAddress(Constantes.MAILFROM));
             //Adding receiver
-            mm.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
+            mm.addRecipients(Message.RecipientType.TO,email);
             //Adding subject
             mm.setSubject(subject);
             //Adding message

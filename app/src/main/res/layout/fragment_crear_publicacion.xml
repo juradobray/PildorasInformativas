@@ -1,0 +1,107 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.parcial.brayan.appfinal.CrearPublicacion">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+
+
+        <!-- TODO: Update blank fragment layout -->
+        <!-- Titulo-->
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:paddingTop="16dp"
+            android:text="Título publicación"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/black" />
+
+        <!-- Descripción -->
+
+        <!-- Etiqueta Fecha -->
+
+        <!-- Fecha -->
+
+        <!-- Categoría -->
+
+
+        <EditText
+            android:id="@+id/titulo_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Título"
+            android:maxLength="55"
+            android:maxLines="1"
+            android:minLines="1"
+            android:paddingBottom="16dp"
+            android:paddingTop="16dp"
+            android:layout_below="@+id/text_title"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/text_descrip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:text="Descripción publicación"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/titulo_input"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="33dp" />
+
+        <EditText
+            android:id="@+id/descripcion_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Descripción"
+            android:maxLength="128"
+            android:nestedScrollingEnabled="true"
+            android:paddingBottom="16dp"
+            android:paddingTop="16dp"
+            android:layout_below="@+id/titulo_input"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="40dp" />
+
+        <TextView
+            android:id="@+id/fecha_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:text="Fecha"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="39dp"
+            android:layout_below="@+id/descripcion_input"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <DatePicker
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/date_pick_crear"
+            android:layout_marginTop="11dp"
+            android:yearListSelectorColor="@color/colorPrimary"
+            android:layout_below="@+id/fecha_text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+    </RelativeLayout>
+    </ScrollView>
+</FrameLayout>

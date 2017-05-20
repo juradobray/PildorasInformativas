@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity
             // Handle the camera action
             Toast.makeText(this, "", Toast.LENGTH_LONG).show();
             try {
-            fragment = Calendar.newInstance("", "");
+            fragment = CrearPublicacion.newInstance("", "");
 
 
             } catch (Exception e) {
@@ -131,8 +131,8 @@ public class MainActivity extends AppCompatActivity
             fragmentManager.beginTransaction().replace(R.id.content_main, fragment).commit();
         } else if (id == R.id.nav_cerrar_Sesion) {
 Toast.makeText(this,"Cerrar sesión",Toast.LENGTH_LONG).show();
-            EnviarMails em = new EnviarMails(this,"michaeljurado16@gmail.com","prueba desde android","hola mensaje envviado desde android");
-            em.execute();
+         //   EnviarMails em = new EnviarMails(this,"kattrendon17@gmail.com","prueba desde android","hola mi amor!! te amo !!");
+           // em.execute();
 
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
