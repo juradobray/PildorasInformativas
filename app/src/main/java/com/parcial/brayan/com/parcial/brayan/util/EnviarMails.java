@@ -93,14 +93,15 @@ public class EnviarMails extends AsyncTask<Void,Void,Void> {
             //Setting sender address
             mm.setFrom(new InternetAddress(Constantes.MAILFROM));
             //Adding receiver
+
             mm.addRecipients(Message.RecipientType.TO,email);
             //Adding subject
             mm.setSubject(subject);
             //Adding message
             mm.setText(message);
-
+            mm.saveChanges();
             //Sending email
-            Transport.send(mm);
+            Transport.send(mm,email);
 
         } catch (MessagingException e) {
             e.printStackTrace();

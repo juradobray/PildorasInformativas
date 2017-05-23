@@ -18,6 +18,7 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 //import com.parcial.brayan.com.parcial.brayan.database.UsuarioDao;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.parcial.brayan.com.parcial.brayan.entity.Usuario;
 import com.parcial.brayan.com.parcial.brayan.util.EnviarMails;
 
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, Calendar.OnFragmentInteractionListener {
 
     private Usuario user= new Usuario();
-    @Override
+       @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -49,6 +50,8 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
 
        Menu m = navigationView.getMenu();
         user= (Usuario)(getIntent().getExtras().get("usuario_login"));
@@ -108,7 +111,7 @@ public class MainActivity extends AppCompatActivity
             // Handle the camera action
             Toast.makeText(this, "", Toast.LENGTH_LONG).show();
             try {
-            fragment = CrearPublicacion.newInstance("", "");
+            fragment = CrearPublicacion.newInstance(user.getId_usuario()+"", user.getId_facultad()+"");
 
 
             } catch (Exception e) {

@@ -15,6 +15,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 //import com.parcial.brayan.com.parcial.brayan.database.UsuarioDao;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.parcial.brayan.com.parcial.brayan.entity.Usuario;
 
 import org.json.JSONException;
@@ -30,6 +31,8 @@ public class Login extends AppCompatActivity {
     private Usuario userLogin;
     private StringRequest request;
     private RequestQueue requestQueue;
+    private String TOKEN;
+    private String URLTOK="https://bd-android-juradobray1.c9users.io/gestionarTokens.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,8 @@ public class Login extends AppCompatActivity {
         passwordLogin = (EditText) findViewById(R.id.password_login);
         user = new Usuario();
         userLogin = new Usuario();
+        TOKEN=  FirebaseInstanceId.getInstance().getToken();
+        guardarToken();
         //  userDao = new UsuarioDao();
     }
 
@@ -104,6 +109,45 @@ public class Login extends AppCompatActivity {
 
 
         }
+
+
+    }
+
+    public void guardarToken(){
+
+        requestQueue = Volley.newRequestQueue(this);
+
+        request = new StringRequest(Request.Method.POST, URLTOK, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+
+                    JSONObject jsonObject = new JSONObject(response);
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(Login.this, "Se presentó una excepción al decodificar el JSON", Toast.LENGTH_LONG).show();
+                }
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() {
+                HashMap<String, String> map = new HashMap<String, String>();
+                map.put("token_app", TOKEN);
+
+                return map;
+            }
+        };
+
+        requestQueue.add(request);
 
 
     }
